@@ -39,10 +39,9 @@ const Navbar = ({ className }: { className?: string }) => {
           <MenuItem
             setActive={setActive}
             active={active}
-            item="Contact us"
+            item="Contact Us"
           ></MenuItem>
         </Link>
-        
       </Menu>
     </div>
   );
