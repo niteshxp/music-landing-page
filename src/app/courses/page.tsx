@@ -4,6 +4,13 @@ import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import courseData from "@/data/music_courses.json";
 
+interface course {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
+
 function page() {
   return (
     <div className="min-h-screen bg-black py-12 pt-36">
@@ -11,8 +18,8 @@ function page() {
         All courses ({courseData.courses.length})
       </h1>
       <div className="flex flex-wrap justify-center">
-        {courseData.courses.map((course) => (
-          <CardContainer className="inter-var m-4">
+        {courseData.courses.map((course: course) => (
+          <CardContainer className="inter-var m-4" key={course.id}>
             <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border  ">
               <CardItem
                 translateZ="50"
